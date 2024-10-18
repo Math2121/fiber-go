@@ -11,7 +11,7 @@ func main() {
 	app := fiber.New()
 
 	app.Get("/auth", public)
-	app.Get("auth/login", login)
+	app.Get("/auth/login", login)
 	app.Use(jwtware.New(jwtware.Config{
 		SigningKey: jwtware.SigningKey{Key: []byte("secret")},
 	}))
